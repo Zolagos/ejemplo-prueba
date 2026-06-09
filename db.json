@@ -1,47 +1,73 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "admin@test.com",
-      "password": "A123456",
+      "password": "Admin123*",
       "role": "admin",
       "name": "Administrador"
     },
     {
-      "id": 2,
-      "email": "user@test.com",
-      "password": "A123456",
+      "id": "2",
+      "email": "user1@test.com",
+      "password": "User123*",
       "role": "user",
-      "name": "Usuario"
+      "name": "Usuario Uno"
     },
     {
-      "id": 3,
+      "id": "3",
       "email": "user2@test.com",
-      "password": "A123456",
+      "password": "User123*",
       "role": "user",
-      "name": "Usuario 2"
+      "name": "Usuario Dos"
     }
   ],
   "reservations": [
     {
-      "id": 1,
-      "userId": 2,
+      "userId": "2",
+      "spaceId": 1,
       "workspace": "Sala A",
-      "date": "2026-01-15",
-      "startHour": "08:00",
-      "endHour": "09:00",
-      "reason": "Sprint Planning",
-      "status": "pending"
+      "date": "2026-06-10",
+      "startHour": "12:00",
+      "endHour": "15:55",
+      "reason": "sfs",
+      "status": "pending",
+      "id": "gDkgX1w91IE"
+    }
+  ],
+  "spaces": [
+    {
+      "id": "1",
+      "name": "Sala A",
+      "type": "meeting_room",
+      "capacity": 10,
+      "location": "Floor 1",
+      "status": "available"
     },
     {
-      "id": 2,
-      "userId": 3,
-      "workspace": "Sala B",
-      "date": "2026-01-15",
-      "startHour": "10:00",
-      "endHour": "11:00",
-      "reason": "Daily Meeting",
-      "status": "approved"
+      "id": "2",
+      "name": "Oficina 1",
+      "type": "private_office",
+      "capacity": 4,
+      "location": "Floor 2",
+      "status": "available"
+    },
+    {
+      "id": "3",
+      "name": "Coworking Zone",
+      "type": "coworking",
+      "capacity": 20,
+      "location": "Floor 1",
+      "status": "available"
+    },
+    {
+      "id": "4",
+      "name": "Auditorio Principal",
+      "type": "auditorium",
+      "capacity": 100,
+      "location": "Floor 0",
+      "status": "available"
     }
-  ]
-}
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+  }

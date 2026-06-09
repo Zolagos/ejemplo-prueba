@@ -1,16 +1,9 @@
 import Sidebar from "@/components/Sidebar";
 import { getSession } from "@/utils";
 import { homeController } from "@/controllers/home.controller";
-import { navigateTo } from "../router/router.js";
-import loginView from "@/views/loginView";
 
 export default function homeView() {
   const user = getSession();
-
-  if (!user){
-    return loginView();
-    
-  }
 
   setTimeout(() => {
     homeController();
@@ -49,7 +42,7 @@ export default function homeView() {
                   Puedes visualizar todas las reservas.
                 </p>
 
-                <button
+                <button id="botonGestionAdmin"
                   class="mt-3 bg-blue-600 text-white px-4 py-2 rounded"
                 >
                   Gestionar Reservas

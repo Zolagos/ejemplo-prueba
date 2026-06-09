@@ -4,21 +4,31 @@ import { http } from "@/api/http";
 
 export const loginController = () => {
   const form = document.querySelector("#loginForm");
+  const errorBox = document.querySelector("#loginError");
+
+  const showError = (msg) => {
+    errorBox.textContent = msg;
+    errorBox.classList.remove("hidden");
+  };
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    errorBox.classList.add("hidden");
 
     const email = form.email.value.trim();
     const password = form.password.value.trim();
 
+    if (!email || !password) {
+      return showError("Por favor completa todos los campos.");
+    }
+
     try {
       const users = await http.get(
-        `/users?email=${email}&password=${password}`,
+        `/users?email=${email}&password=${password}`
       );
 
       if (!users.length) {
-        alert("Credenciales incorrectas");
-        return;
+        return showError("Correo o contraseña incorrectos.");
       }
 
       saveSession({
@@ -28,9 +38,9 @@ export const loginController = () => {
       });
 
       navigateTo("/home");
-    } catch (error) {
-      console.error(error);
-      alert("Error conectando con la API");
+
+    } catch {
+      showError("Error conectando con el servidor.");
     }
   });
 };
