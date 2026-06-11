@@ -4,6 +4,7 @@ import adminView from "../views/adminView";
 import NotFoundView from "@/views/notFound";
 import reservasView from "@/views/reservas";
 import { isAuthenticated, isAdmin } from "@/utils";
+import createSpaceView from "@/views/createSpaceView";
 
 // Route → View
 const routes = {
@@ -12,6 +13,7 @@ const routes = {
   "/reservas": reservasView,
   "/admin": adminView, 
   "/not-found": NotFoundView,
+  "/create-space": createSpaceView
 };
 
 // Routes that require auth and a specific role
@@ -20,6 +22,7 @@ const protectedRoutes = {
   "/home": null,
   "/reservas": "user",
   "/admin": "admin",
+  "/create-space": "admin"
 };
 
 export const navigateTo = (path) => {

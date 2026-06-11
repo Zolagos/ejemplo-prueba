@@ -24,15 +24,26 @@
   ],
   "reservations": [
     {
+      "userId": "3",
+      "spaceId": 3,
+      "workspace": "Coworking Zone",
+      "date": "2026-06-12",
+      "startHour": "14:53",
+      "endHour": "17:55",
+      "reason": "asd",
+      "status": "rejected",
+      "id": "WWrbl1-kULo"
+    },
+    {
       "userId": "2",
       "spaceId": 1,
       "workspace": "Sala A",
-      "date": "2026-06-10",
-      "startHour": "12:00",
-      "endHour": "15:55",
-      "reason": "sfs",
+      "date": "2026-06-26",
+      "startHour": "11:52",
+      "endHour": "15:52",
+      "reason": "sd",
       "status": "pending",
-      "id": "gDkgX1w91IE"
+      "id": "9TomIqYWAFs"
     }
   ],
   "spaces": [
@@ -67,7 +78,15 @@
       "capacity": 100,
       "location": "Floor 0",
       "status": "available"
+    },
+    {
+      "name": "dfg",
+      "type": "Oficina privada",
+      "capacity": 786,
+      "location": "swdf",
+      "status": "available",
+      "id": "CRKJwxghefs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
-  }
+}

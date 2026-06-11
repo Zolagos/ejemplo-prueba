@@ -208,12 +208,19 @@ export const homeController = async () => {
 
   await renderReservations(container);
 
+  // Evento para navegar a la vista de creación de reservas (usuario)
   document.querySelector("#botonReservaU")?.addEventListener("click", () => {
     navigateTo("/reservas");
   });
 
+  // Evento para navegar a la vista de administración general
   document.querySelector("#botonGestionAdmin")?.addEventListener("click", () => {
     navigateTo("/admin");
+  });
+
+  // NUEVO: Evento para navegar a la vista de creación de espacios (solo admin)
+  document.querySelector("#btnCreateSpace")?.addEventListener("click", () => {
+    navigateTo("/create-space");
   });
 
   container.addEventListener("click", async (e) => {
@@ -221,8 +228,7 @@ export const homeController = async () => {
     if (!btn) return;
 
     const action = btn.dataset.action;
-    const id = Number(btn.dataset.id);
-
+    const id = btn.dataset.id;
     switch (action) {
       case "approve":
         await patchReservationStatus(id, "approved");

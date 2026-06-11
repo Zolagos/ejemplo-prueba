@@ -25,7 +25,7 @@ export const adminController = async () => {
     if (!btn) return;
 
     const action = btn.dataset.action;
-    const id = Number(btn.dataset.id);
+    const id = btn.dataset.id;
 
     switch (action) {
       case "approve":
